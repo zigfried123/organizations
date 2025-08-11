@@ -1,0 +1,179 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API",
+        "version": "1"
+    },
+    "paths": {
+        "/api/activities/get-organizations-by-activity": {
+            "get": {
+                "operationId": "56dc268440716f9a5ec8e588c2059dda",
+                "responses": {
+                    "200": {
+                        "description": "Get organizations by activity"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/activities/get-organizations-by-activity-type": {
+            "post": {
+                "operationId": "86c4f536909c281d5f7c7c6d0d5595c5",
+                "requestBody": {
+                    "description": "Данные для поиска организаций по типу деятельности",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/components/schemas/Activity"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Get organizations by activity type"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/buildings/get-organization-by-building": {
+            "get": {
+                "operationId": "2e59840abbf7c006cccf3ff4b91c4d8a",
+                "responses": {
+                    "200": {
+                        "description": "Get organization by building"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/buildings/get-buildings-by-coords": {
+            "get": {
+                "operationId": "ff1f3949954dd8231bec0494c406f2a1",
+                "parameters": [
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "schema": {
+                            "type": "decimal"
+                        }
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "schema": {
+                            "type": "decimal"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get buildings by coords"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/organizations/get-organization-by-name": {
+            "post": {
+                "operationId": "f13faa8d4d92c3e6344a14d36e3a0a1d",
+                "requestBody": {
+                    "description": "Получение организации по имени",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/components/schemas/Activity"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Get organization by name"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/organizations/get-organization-info-by-id/{organizationId}": {
+            "get": {
+                "operationId": "800743a151af24ec3c2ace71d4b27ecd",
+                "parameters": [
+                    {
+                        "name": "organizationId",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get organization info by id"
+                    },
+                    "404": {
+                        "description": "Model not found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Activity": {
+                "title": "Activity",
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

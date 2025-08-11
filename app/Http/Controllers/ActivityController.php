@@ -15,7 +15,7 @@ class ActivityController extends Controller {
      * @OA\Get(
      *     path="/api/activities/get-organizations-by-activity",
      *     security={{"bearerAuth":{}}},
-     *     @OA\Response(response="200", description="Get organizations by activity")
+     *     @OA\Response(response="200", description="Cписок всех организаций, которые относятся к указанному виду деятельности")
      * )
      */
     public function getOrganizationsByActivity() {
@@ -39,8 +39,8 @@ class ActivityController extends Controller {
      *             },
      *          )
      *     ),     
-     *     @OA\Response(response="200", description="Get organizations by activity type"),
-     *     @OA\Response(response="422", description="Validation error")
+     *     @OA\Response(response="200", description="Искать организации по виду деятельности"),
+     *     @OA\Response(response="422", description="Ошибка валидации")
      * )
      */
     public function getOrganizationsByActivityType(Request $request) {

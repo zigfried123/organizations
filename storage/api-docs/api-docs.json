@@ -10,7 +10,7 @@
                 "operationId": "56dc268440716f9a5ec8e588c2059dda",
                 "responses": {
                     "200": {
-                        "description": "Get organizations by activity"
+                        "description": "Cписок всех организаций, которые относятся к указанному виду деятельности"
                     }
                 },
                 "security": [
@@ -40,10 +40,10 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Get organizations by activity type"
+                        "description": "Искать организации по виду деятельности"
                     },
                     "422": {
-                        "description": "Validation error"
+                        "description": "Ошибка валидации"
                     }
                 },
                 "security": [
@@ -58,7 +58,7 @@
                 "operationId": "2e59840abbf7c006cccf3ff4b91c4d8a",
                 "responses": {
                     "200": {
-                        "description": "Get organization by building"
+                        "description": "Cписок всех организаций находящихся в конкретном здании"
                     }
                 },
                 "security": [
@@ -89,10 +89,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Get buildings by coords"
+                        "description": "Cписок организаций, которые находятся в заданном радиусе/прямоугольной области относительно указанной точки на карте. список зданий"
                     },
                     "422": {
-                        "description": "Validation error"
+                        "description": "Ошибка валидации"
                     }
                 },
                 "security": [
@@ -122,10 +122,10 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Get organization by name"
+                        "description": "Поиск организации по названию"
                     },
                     "422": {
-                        "description": "Validation error"
+                        "description": "Ошибка валидации"
                     }
                 },
                 "security": [
@@ -149,10 +149,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Get organization info by id"
+                        "description": "Вывод информации об организации по её идентификатору"
                     },
                     "404": {
-                        "description": "Model not found"
+                        "description": "Модель не найдена"
                     }
                 },
                 "security": [

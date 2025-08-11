@@ -20,14 +20,12 @@ class OrganizationController extends Controller {
      *          description="Получение организации по имени",
      *          @OA\JsonContent(
      *             oneOf={
-     *                    @OA\Schema(ref="#/components/schemas/Activity"),
-     *                   
+     *                    @OA\Schema(ref="#/components/schemas/Activity"),  
      *               },
-
      *          )
      *     ),
-     *     @OA\Response(response="200", description="Get organization by name"),
-     *     @OA\Response(response="422", description="Validation error")
+     *     @OA\Response(response="200", description="Поиск организации по названию"),
+     *     @OA\Response(response="422", description="Ошибка валидации")
      * )
      */
     public function getOrganizationByName(Request $request) {
@@ -46,8 +44,8 @@ class OrganizationController extends Controller {
      *     path="/api/organizations/get-organization-info-by-id/{organizationId}",
      *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(name="organizationId", in="path", @OA\Schema(type="integer")),
-     *     @OA\Response(response="200", description="Get organization info by id"),
-     *     @OA\Response(response="404", description="Model not found")
+     *     @OA\Response(response="200", description="Вывод информации об организации по её идентификатору"),
+     *     @OA\Response(response="404", description="Модель не найдена")
      * )
      */
     public function getOrganizationInfoById($organizationId) {

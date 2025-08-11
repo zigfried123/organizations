@@ -15,7 +15,7 @@ class BuildingController extends Controller {
      * @OA\Get(
      *     path="/api/buildings/get-organization-by-building",
      *     security={{"bearerAuth":{}}},
-     *     @OA\Response(response="200", description="Get organization by building")
+     *     @OA\Response(response="200", description="Cписок всех организаций находящихся в конкретном здании")
      * )
      */
     public function getOrganizationByBuilding() {
@@ -37,8 +37,8 @@ class BuildingController extends Controller {
      *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(name="latitude", in="query", @OA\Schema(type="decimal")),
      *     @OA\Parameter(name="longitude", in="query", @OA\Schema(type="decimal")),
-     *     @OA\Response(response="200", description="Get buildings by coords"),
-     *     @OA\Response(response="422", description="Validation error")
+     *     @OA\Response(response="200", description="Cписок организаций, которые находятся в заданном радиусе/прямоугольной области относительно указанной точки на карте. список зданий"),
+     *     @OA\Response(response="422", description="Ошибка валидации")
      * )
      */
     public function getBuildingsByCoords(Request $request) {

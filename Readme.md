@@ -1,5 +1,6 @@
 composer i<br>
 npm i<br>
+npm run dev<br>
 sudo docker compose -f compose.dev.yaml up -d --build<br>
 sudo docker compose -f compose.dev.yaml exec workspace bash<br>
 php artisan migrate<br>

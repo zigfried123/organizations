@@ -42,7 +42,7 @@
                 .then(response => console.log(response))
                 .catch(err => console.log(err.response.data.message));
 
-                 axios.get(`${this.server}organizations/get-organization-info-by-id/9`,
+                 axios.get(`${this.server}organizations/get-organization-info-by-id/2`,
                   {
                    headers: headers
                   })
@@ -56,7 +56,7 @@
                 .then(response => console.log(response))
                 .catch(err => console.log(err.response.data.errors));
 
-                 axios.get(`${this.server}buildings/get-buildings-by-coords?latitude=1&longitude=2`,
+                 axios.get(`${this.server}buildings/get-buildings-by-coords?latitude=35&longitude=54`,
                   {
                    headers: headers
                   })

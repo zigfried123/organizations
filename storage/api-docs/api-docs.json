@@ -6,8 +6,22 @@
     },
     "paths": {
         "/api/activities/get-organizations-by-activity": {
-            "get": {
-                "operationId": "56dc268440716f9a5ec8e588c2059dda",
+            "post": {
+                "operationId": "4e88be84fe34c9ec45a0dc7421fd20ee",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "oneOf": [
+                                    {
+                                        "$ref": "#/components/schemas/Activity"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Cписок всех организаций, которые относятся к указанному виду деятельности"

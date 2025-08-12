@@ -12,9 +12,18 @@ class ActivityController extends Controller {
     }
 
     /**
-     * @OA\Get(
+     * @OA\Post(
      *     path="/api/activities/get-organizations-by-activity",
      *     security={{"bearerAuth":{}}},
+     *     @OA\RequestBody(
+     *          required=true,
+     *          @OA\JsonContent(
+     *             oneOf={
+     *                @OA\Schema(ref="#/components/schemas/Activity"),
+     *                   
+     *             },
+     *          )
+     *     ),     
      *     @OA\Response(response="200", description="Cписок всех организаций, которые относятся к указанному виду деятельности")
      * )
      */

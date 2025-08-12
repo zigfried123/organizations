@@ -7,8 +7,6 @@
             return {
                 server: 'http://localhost/api/',
                 token: null,   
-                
-                n: null
             }
         },
         methods: {
@@ -106,7 +104,7 @@
 <template>
     
     
-    {{n}}
+  
 
 </template>
 

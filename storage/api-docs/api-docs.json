@@ -24,7 +24,6 @@
             "post": {
                 "operationId": "86c4f536909c281d5f7c7c6d0d5595c5",
                 "requestBody": {
-                    "description": "Данные для поиска организаций по типу деятельности",
                     "required": true,
                     "content": {
                         "application/json": {
@@ -53,9 +52,9 @@
                 ]
             }
         },
-        "/api/buildings/get-organization-by-building": {
+        "/api/buildings/get-organizations-by-building": {
             "get": {
-                "operationId": "2e59840abbf7c006cccf3ff4b91c4d8a",
+                "operationId": "c52d2d075ca4bb4160cab0f6c35737fd",
                 "responses": {
                     "200": {
                         "description": "Cписок всех организаций находящихся в конкретном здании"

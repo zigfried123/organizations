@@ -21,7 +21,7 @@ Route::post('/tokens/create', function (Request $request, User $user) {
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::controller(ActivityController::class)->group(function () {
-        Route::get('/activities/get-organizations-by-activity','getOrganizationsByActivity');
+        Route::post('/activities/get-organizations-by-activity','getOrganizationsByActivity');
         
         Route::post('/activities/get-organizations-by-activity-type','getOrganizationsByActivityType');
     });
@@ -31,7 +31,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/organizations/get-organization-info-by-id/{organizationId}', 'getOrganizationInfoById')->where('organizationId', '[0-9]+');;
     });
     Route::controller(BuildingController::class)->group(function () {
-       Route::get('/buildings/get-organization-by-building', 'getOrganizationByBuilding');
+       Route::get('/buildings/get-organizations-by-building', 'getOrganizationsByBuilding');
        Route::get('/buildings/get-buildings-by-coords', 'getBuildingsByCoords');
     });
 });

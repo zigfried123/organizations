@@ -18,9 +18,15 @@ class ActivityController extends Controller {
      *     @OA\Response(response="200", description="Cписок всех организаций, которые относятся к указанному виду деятельности")
      * )
      */
-    public function getOrganizationsByActivity() {
+    public function getOrganizationsByActivity(Request $request) {
+        
+        $validated = $request->validate([
+            'title' => 'required|string',
+        ]);
 
-        $organisationsByActivity = $this->activity->getOrganizationsByActivity();
+        $title = $validated['title'];
+
+        $organisationsByActivity = $this->activity->getOrganizationsByActivity($title);
 
         return $organisationsByActivity;
     }
@@ -31,7 +37,6 @@ class ActivityController extends Controller {
      *     security={{"bearerAuth":{}}},
      *     @OA\RequestBody(
      *          required=true,
-     *          description="Данные для поиска организаций по типу деятельности",
      *          @OA\JsonContent(
      *             oneOf={
      *                @OA\Schema(ref="#/components/schemas/Activity"),
@@ -51,7 +56,7 @@ class ActivityController extends Controller {
 
         $type = $validated['title'];
 
-        $organisationsByActivityType = $this->activity->getOrganizationsByActivity($type);
+        $organisationsByActivityType = $this->activity->getOrganizationsByActivityType($type);
 
         return $organisationsByActivityType;
     }

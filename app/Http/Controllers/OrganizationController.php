@@ -35,8 +35,10 @@ class OrganizationController extends Controller {
         ]);
 
         $title = $validated['title'];
+        
+        $organization = $this->organization->where('title', $title)->first();
 
-        return $this->organization->where('title', $title)->with('building')->with('activities')->first();
+        return $organization;
     }
 
     /**

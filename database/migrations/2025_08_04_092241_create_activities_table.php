@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->foreignId('parent_id')->nullable();
-            $table->foreignId('organization_id')->nullable();
             $table->timestamps();
         });
     }

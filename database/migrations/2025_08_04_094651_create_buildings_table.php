@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('organization_id')->nullable();
             $table->string('address')->unique();
             $table->decimal('min_latitude');
             $table->decimal('max_latitude');

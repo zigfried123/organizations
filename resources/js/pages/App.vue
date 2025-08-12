@@ -7,6 +7,8 @@
             return {
                 server: 'http://localhost/api/',
                 token: null,   
+                
+                n: null
             }
         },
         methods: {
@@ -16,14 +18,20 @@
                 'Authorization': `Bearer ${this.token}`
                 };
                
-                axios.get(`${this.server}activities/get-organizations-by-activity`,{headers: headers})
-                .then(response => console.log(response))
+                axios.post(`${this.server}activities/get-organizations-by-activity`,
+                {
+                    title: 'Еда'
+                },
+                {
+                    headers: headers
+                })
+                .then(response => this.n = response.data.title)
                 .catch(err => console.log(err.response.data.message));   
 
 
                  axios.post(`${this.server}activities/get-organizations-by-activity-type`,
                   {
-                    title: 'Легковые'
+                    title: 'Еда'
                   },
                   {
                    headers: headers
@@ -49,7 +57,7 @@
                 .then(response => console.log(response))
                 .catch(err => console.log(err.response.data.message));
 
-              axios.get(`${this.server}buildings/get-organization-by-building`,
+              axios.get(`${this.server}buildings/get-organizations-by-building`,
                   {
                    headers: headers
                   })
@@ -96,6 +104,9 @@
 </script>
 
 <template>
+    
+    
+    {{n}}
 
 </template>
 

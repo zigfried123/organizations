@@ -18,7 +18,7 @@ class BuildingController extends Controller {
      *     @OA\Response(response="200", description="Get organization by building")
      * )
      */
-    public function getOrganizationByBuilding() {
+    public function getOrganizationsByBuilding() {
         $data = [];
 
         $buildings = $this->building->with('organization')->get();

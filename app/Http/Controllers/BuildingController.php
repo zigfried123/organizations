@@ -13,19 +13,19 @@ class BuildingController extends Controller {
 
     /**
      * @OA\Get(
-     *     path="/api/buildings/get-organization-by-building",
+     *     path="/api/buildings/get-organizations-by-building",
      *     security={{"bearerAuth":{}}},
      *     @OA\Response(response="200", description="Cписок всех организаций находящихся в конкретном здании")
      * )
      */
-    public function getOrganizationByBuilding() {
+    public function getOrganizationsByBuilding() {
         $data = [];
 
-        $buildings = $this->building->with('organization')->get();
+        $buildings = $this->building->with('organizations')->get();
 
         foreach ($buildings as $building) {
 
-            $data[$building->address] = $building->organization->title;
+            $data[$building->address] = $building->organizations;
         }
 
         return $data;
@@ -56,7 +56,7 @@ class BuildingController extends Controller {
         $data2 = [];
 
         foreach ($buildingsByCoords as $buildingByCoord) {
-            $data2[$buildingByCoord->address] = $buildingByCoord->organization->title;
+            $data2[$buildingByCoord->address] = $buildingByCoord->organizations;
         }
 
         return $data2;

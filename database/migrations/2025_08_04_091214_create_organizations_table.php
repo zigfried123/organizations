@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title')->unique();
             $table->json('phones');
+            $table->foreignId('activity_id')->nullable();
+            $table->foreignId('building_id')->nullable();
             $table->timestamps();
         });
     }
